@@ -104,7 +104,6 @@ body {
             ul {
                 display: flex; flex-direction: row; justify-content: space-between; margin: 1rem; 
                 li {
-                    list-style: none;
                     a { text-decoration: none; color: $black; font-size: 1.25rem;  }
                 }
             }
@@ -112,13 +111,37 @@ body {
     }
 
     main {
-        #hero {
-            margin: 1rem; height: 80vh; display: flex; flex-direction: column; justify-content: space-evenly;
-            .hero-text {
-                h2 { font-weight: 600; font-size: 1.5rem; }
-            }
-            .hero-btns { display: flex; flex-direction: row; justify-content: space-between; margin: 0.5rem 0 1rem;}
+      margin: 1rem;
+      #hero {
+        height: 80vh; display: flex; flex-direction: column; justify-content: space-evenly;
+        .hero-btns { display: flex; flex-direction: row; justify-content: space-between; margin: 0.5rem 0 1rem;}
+      }
+
+      .tech-stack {
+        
+        ul {
+          display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem; align-items: center;
+          li {
+            img { height: auto; width: 4rem; }
+          }
         }
+      }
+
+      #about { }
+
+      #projects {
+        .project { 
+          .project-text {
+            .project-stack {
+              ul { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;
+                li {
+                  img { height: auto; width: 3rem; }
+                }
+              }
+            }
+          }
+         }
+      }
     }
 }
 
@@ -126,3 +149,8 @@ body {
 .btn { text-decoration: none; background-color: $btn; padding: 0.75rem; font-weight: 600; color: $black; display: block; width: fit-content;
     &:hover { background-color: rgba($color: $btn, $alpha: 0.6); }
 }
+
+h2 { font-weight: 600; font-size: 1.5rem; margin-bottom: 0.75rem; margin-top: 2rem; }
+h3 { font-weight: 600; font-size: 1.25rem; margin-bottom: 0.75rem; margin-top: 2rem; }
+h4 { font-weight: 600; font-size: 1rem; margin-bottom: 0.75rem; margin-top: 2rem; }
+li { list-style: none; }
