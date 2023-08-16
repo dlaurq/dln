@@ -148,6 +148,40 @@ body main #projects .project .project-text .project-stack ul li img {
   height: auto;
   width: 3rem;
 }
+body main #projects .project .project-imgs {
+  margin: 2rem 0;
+}
+body main #projects .project .project-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+body main #projects .project .project-links a {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+}
+body main #projects .project .project-links a img {
+  height: auto;
+  width: 3rem;
+}
+body main #projects .see-more {
+  text-align: center;
+  margin: 3rem 0 1rem 0;
+}
+body main #projects .see-more a {
+  text-decoration: none;
+  color: #F25757;
+  font-size: 1.25rem;
+}
+body main #projects .see-more a:hover {
+  color: rgba(242, 87, 87, 0.6);
+}
 
 .btn {
   text-decoration: none;

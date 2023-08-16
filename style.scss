@@ -140,7 +140,26 @@ body {
               }
             }
           }
+
+          .project-imgs { 
+            margin: 2rem 0;
+          }
+
+          .project-links {
+            display: flex; flex-direction: row; justify-content: space-between; align-items: center; 
+            a{ display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: 1rem; text-decoration: none; padding: 0.25rem 0.5rem;
+              img { height: auto; width: 3rem; }
+            }
+          }
          }
+
+      
+        .see-more{ text-align: center; margin: 3rem 0 1rem 0;
+          a { text-decoration: none; color: $highlight; font-size: 1.25rem; 
+            &:hover { color: rgba($color: $highlight, $alpha: 0.6); }
+          }
+        }
+         
       }
     }
 }
