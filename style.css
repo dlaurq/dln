@@ -113,16 +113,37 @@ body main {
   margin: 1rem;
 }
 body main #hero {
-  height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+}
+body main #hero .hero-text h2 {
+  margin-top: 0;
+}
+body main #hero .hero-text p {
+  margin-bottom: 1rem;
 }
 body main #hero .hero-btns {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 0.5rem 0 1rem;
+  margin: 2rem 0 0;
+}
+body main #hero .hero-btns a {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+body main #hero .hero-btns a img {
+  height: auto;
+  width: 2rem;
+  margin-left: 1rem;
+}
+body main #hero .hero-img img {
+  height: auto;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 body main .tech-stack ul {
   display: flex;
@@ -135,6 +156,10 @@ body main .tech-stack ul {
 body main .tech-stack ul li img {
   height: auto;
   width: 4rem;
+}
+body main #projects .project {
+  border: #F25757 2px solid;
+  padding: 1rem;
 }
 body main #projects .project .project-text .project-stack ul {
   display: flex;
@@ -182,6 +207,22 @@ body main #projects .see-more a {
 body main #projects .see-more a:hover {
   color: rgba(242, 87, 87, 0.6);
 }
+body main #contact #contact-form fieldset {
+  border: none;
+  margin: 1rem 0;
+}
+body main #contact #contact-form fieldset input, body main #contact #contact-form fieldset textarea {
+  width: 100%;
+}
+body main #contact #contact-form button {
+  border: none;
+  width: 100%;
+}
+body footer {
+  background: #2C2C2C;
+  width: 100%;
+  min-height: 5rem;
+}
 
 .btn {
   text-decoration: none;
@@ -208,7 +249,6 @@ h3 {
   font-weight: 600;
   font-size: 1.25rem;
   margin-bottom: 0.75rem;
-  margin-top: 2rem;
 }
 
 h4 {

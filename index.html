@@ -29,8 +29,8 @@
                 <img src="./imgs/eu.webp" alt="Profile picture">
             </section>
             <section class="hero-btns">
-                <a href="#projects" class="btn">My work</a>
-                <a href="#contact" class="btn">Get in touch</a>
+                <a href="https://www.linkedin.com/in/dlaurq/" target="_blank" class="btn">Linkedin <img src="./svgs/iconmonstr-linkedin-3.svg" alt="Linkedin icon"></a>
+                <a href="https://github.com/dlaurq?tab=repositories" target="_blank" class="btn">Github <img src="./svgs/github-icon-1.svg" alt="Github Logo"></a>
             </section>
             
         </section>
@@ -91,26 +91,30 @@
         </section>
 
         <section id="contact">
+            <h2>Contact</h2>
+            <!--- 
             <section class="contact-list">
                 <ul>
-                    <li>linkedin</li>
-                    <li>git</li>
+                    <li><a href="https://www.linkedin.com/in/dlaurq/" target="_blank">Linkedin <img src="./svgs/iconmonstr-linkedin-3.svg" alt="Linkedin icon"></a></li>
+                    <a href="https://github.com/dlaurq?tab=repositories" target="_blank">Github <img src="./svgs/github-icon-1.svg" alt="Github Logo"></a>
                 </ul>
             </section>
-
+            -->
             <form action="" id="contact-form">
                 <fieldset>
-                    <label for="name">Name</label>
-                    <input type="text" name="name" id="name">
+                    <label for="name">Name*</label>
+                    <input type="text" name="name" id="name" required>
                 </fieldset>
                 <fieldset>
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email">
+                    <label for="email">Email*</label>
+                    <input type="email" name="email" id="email" required>
                 </fieldset>
                 <fieldset>
-                    <label for="message">Message</label>
-                    <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                    <label for="message">Message*</label>
+                    <textarea name="message" id="message" cols="30" rows="10" required></textarea>
                 </fieldset>
+
+                <button type="submit" class="btn">Send</button>
             </form>
         </section>
 
