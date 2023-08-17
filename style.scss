@@ -89,6 +89,11 @@ $black: #2C2C2C;
 $highlight: #F25757;
 $btn: #E9DF00;
 
+$small: 580px;
+$medium: 900px;
+$large: 1400px;
+
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: $white;
@@ -96,15 +101,22 @@ body {
 
     header {
         border-bottom: $black 2px solid; min-height: 15vh;
+        @media (min-width: $small) { min-height: auto; padding-bottom: 1rem;}
         nav {
-            h1 {
-                margin: 1rem 0 0 1rem;
-                a { font-weight: 600; text-decoration: none; color:$highlight; font-size: 2rem;}
+            @media (min-width: $small) { display: flex; flex-direction: row; justify-content: space-between; align-items: center;}
+            h1 { margin: 1rem 0 0 1rem;
+                a { font-weight: 600; text-decoration: none; color:$highlight; font-size: 2rem;
+                  @media (min-width: $medium) { font-size: 2.5rem; }
+                }
             }
             ul {
                 display: flex; flex-direction: row; justify-content: space-between; margin: 1rem; 
+                @media (min-width: $small) { display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: 2rem; margin-bottom: 0;
+                }
                 li {
-                    a { text-decoration: none; color: $black; font-size: 1.25rem;  }
+                    a { text-decoration: none; color: $black; font-size: 1.25rem;  
+                      @media (min-width: $medium) { font-size: 1.5rem; }
+                    }
                 }
             }
         }
@@ -112,28 +124,36 @@ body {
 
     main {
       margin: 1rem;
+      @media (min-width: $small)  { margin: 3rem 7.5rem; }
+      @media (min-width: $large)  { margin: 7.5rem 22.5rem; }
       #hero {
          display: flex; flex-direction: column; justify-content: space-evenly;
+         @media (min-width: $medium) { flex-direction: row; flex-wrap: wrap; justify-content: start;}
         .hero-text { 
+          @media (min-width: $medium) {order: 1; flex: 1 0 50%; height: fit-content; margin-right: 0.5rem; align-self: center;;}
           h2 { margin-top: 0; }
           p { margin-bottom: 1rem; }
         }
         .hero-btns { display: flex; flex-direction: row; justify-content: space-between; margin: 2rem 0 0;
+          @media (min-width: $medium) { order: 3; flex: 1 0 50%;}
           a { display: flex; flex-direction: row; justify-content: space-between; align-items: center;
             img { height: auto; width: 2rem; margin-left: 1rem;}
           }
         }
         .hero-img { 
-          img { height: auto; width: fit-content; }
+          @media (min-width: $medium) { max-width: 20rem; order: 2; flex: 1 0 100%; }
+          img { height: auto; width: 100%; }
         }
+
       }
 
       .tech-stack {
-        
         ul {
           display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem; align-items: center;
           li {
-            img { height: auto; width: 4rem; }
+            img { height: auto; width: 4rem;
+
+            }
           }
         }
       }
@@ -141,31 +161,39 @@ body {
       #about { }
 
       #projects {
-        .project { border: $highlight 2px solid; padding: 1rem; 
+        .project { border: $highlight 2px solid; padding: 1rem; margin-bottom: 1rem;
+          @media (min-width: $medium) { display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: 5rem; border: none; padding: 0; } 
           .project-text {
             .project-stack {
               ul { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;
                 li {
-                  img { height: auto; width: 3rem; }
+                  img { height: auto; width: 3rem; 
+                    @media (min-width: $medium) { width: 4rem; }
+                  }
                 }
               }
             }
           }
 
-          .project-imgs { 
-            margin: 2rem 0;
-          }
+          .project-actions{
 
-          .project-links {
-            display: flex; flex-direction: row; justify-content: space-between; align-items: center; 
-            a{ display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: 1rem; text-decoration: none; padding: 0.25rem 0.5rem;
-              img { height: auto; width: 3rem; }
+            .project-imgs { 
+              margin: 2rem 0;
+              @media (min-width: $large) { width: 25rem; }
+            }
+  
+            .project-links {
+              display: flex; flex-direction: row; justify-content: space-between; align-items: center; 
+              a{ display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: 1rem; text-decoration: none; padding: 0.25rem 0.5rem;
+                img { height: auto; width: 3rem;}
+              }
             }
           }
-         }
+          
+        }
 
       
-        .see-more{ text-align: center; margin: 3rem 0 1rem 0;
+        .see-more{ text-align: center; margin: 2rem 0 1rem 0;
           a { text-decoration: none; color: $highlight; font-size: 1.25rem; 
             &:hover { color: rgba($color: $highlight, $alpha: 0.6); }
           }
@@ -176,8 +204,8 @@ body {
       #contact { 
         #contact-form { 
           fieldset { border: none; margin: 1rem 0;
-            label {  }
-            input, textarea { width: 100%; }
+            label {  @media (min-width: $medium) { font-size: 1.25rem; } }
+            input, textarea { width: 100%;  @media (min-width: $medium) { font-size: 1.25rem; } }
           }
           button { border: none; width: 100%;}
         }
@@ -194,7 +222,27 @@ body {
     &:hover { background-color: rgba($color: $btn, $alpha: 0.6); }
 }
 
-h2 { font-weight: 600; font-size: 1.5rem; margin-bottom: 0.75rem; margin-top: 2rem; }
-h3 { font-weight: 600; font-size: 1.25rem; margin-bottom: 0.75rem; }
-h4 { font-weight: 600; font-size: 1rem; margin-bottom: 0.75rem; margin-top: 2rem; }
+h2 { font-weight: 600; font-size: 1.5rem; margin-bottom: 0.75rem; margin-top: 2rem; 
+  @media (min-width: $medium) { font-size: 1.5rem; }
+  //@media (min-width: $large) { font-size: 2rem; }
+}
+h3 { font-weight: 600; font-size: 1.25rem; margin-bottom: 0.75rem; 
+  @media (min-width: $medium) { font-size: 1.25rem; }
+  //@media (min-width: $large) { font-size: 1.75rem; }
+}
+h4 { font-weight: 600; font-size: 1rem; margin-bottom: 0.75rem; margin-top: 2rem; 
+  @media (min-width: $medium) { font-size: 1rem; }
+  //@media (min-width: $large) { font-size: 1.5rem; }
+}
+p { 
+  @media (min-width: $medium) { font-size: 1rem; } 
+  //@media (min-width: $large) { font-size: 1.5rem; } 
+}
+a { 
+  @media (min-width: $medium) { font-size: 1rem; } 
+  //@media (min-width: $large) { font-size: 1.5rem; } 
+}
+
 li { list-style: none; }
+
+#hero, .tech-stack, #about, #projects, #contact { margin-bottom: 7.5rem; }

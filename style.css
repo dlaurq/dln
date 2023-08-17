@@ -89,6 +89,20 @@ body header {
   border-bottom: #2C2C2C 2px solid;
   min-height: 15vh;
 }
+@media (min-width: 580px) {
+  body header {
+    min-height: auto;
+    padding-bottom: 1rem;
+  }
+}
+@media (min-width: 580px) {
+  body header nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
 body header nav h1 {
   margin: 1rem 0 0 1rem;
 }
@@ -98,24 +112,71 @@ body header nav h1 a {
   color: #F25757;
   font-size: 2rem;
 }
+@media (min-width: 900px) {
+  body header nav h1 a {
+    font-size: 2.5rem;
+  }
+}
 body header nav ul {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: 1rem;
 }
+@media (min-width: 580px) {
+  body header nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 0;
+  }
+}
 body header nav ul li a {
   text-decoration: none;
   color: #2C2C2C;
   font-size: 1.25rem;
 }
+@media (min-width: 900px) {
+  body header nav ul li a {
+    font-size: 1.5rem;
+  }
+}
 body main {
   margin: 1rem;
+}
+@media (min-width: 580px) {
+  body main {
+    margin: 3rem 7.5rem;
+  }
+}
+@media (min-width: 1400px) {
+  body main {
+    margin: 7.5rem 22.5rem;
+  }
 }
 body main #hero {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+}
+@media (min-width: 900px) {
+  body main #hero {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+  }
+}
+@media (min-width: 900px) {
+  body main #hero .hero-text {
+    order: 1;
+    flex: 1 0 50%;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin-right: 0.5rem;
+    align-self: center;
+  }
 }
 body main #hero .hero-text h2 {
   margin-top: 0;
@@ -129,6 +190,12 @@ body main #hero .hero-btns {
   justify-content: space-between;
   margin: 2rem 0 0;
 }
+@media (min-width: 900px) {
+  body main #hero .hero-btns {
+    order: 3;
+    flex: 1 0 50%;
+  }
+}
 body main #hero .hero-btns a {
   display: flex;
   flex-direction: row;
@@ -140,10 +207,16 @@ body main #hero .hero-btns a img {
   width: 2rem;
   margin-left: 1rem;
 }
+@media (min-width: 900px) {
+  body main #hero .hero-img {
+    max-width: 20rem;
+    order: 2;
+    flex: 1 0 100%;
+  }
+}
 body main #hero .hero-img img {
   height: auto;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 100%;
 }
 body main .tech-stack ul {
   display: flex;
@@ -160,6 +233,18 @@ body main .tech-stack ul li img {
 body main #projects .project {
   border: #F25757 2px solid;
   padding: 1rem;
+  margin-bottom: 1rem;
+}
+@media (min-width: 900px) {
+  body main #projects .project {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5rem;
+    border: none;
+    padding: 0;
+  }
 }
 body main #projects .project .project-text .project-stack ul {
   display: flex;
@@ -173,16 +258,26 @@ body main #projects .project .project-text .project-stack ul li img {
   height: auto;
   width: 3rem;
 }
-body main #projects .project .project-imgs {
+@media (min-width: 900px) {
+  body main #projects .project .project-text .project-stack ul li img {
+    width: 4rem;
+  }
+}
+body main #projects .project .project-actions .project-imgs {
   margin: 2rem 0;
 }
-body main #projects .project .project-links {
+@media (min-width: 1400px) {
+  body main #projects .project .project-actions .project-imgs {
+    width: 25rem;
+  }
+}
+body main #projects .project .project-actions .project-links {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
-body main #projects .project .project-links a {
+body main #projects .project .project-actions .project-links a {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -191,13 +286,13 @@ body main #projects .project .project-links a {
   text-decoration: none;
   padding: 0.25rem 0.5rem;
 }
-body main #projects .project .project-links a img {
+body main #projects .project .project-actions .project-links a img {
   height: auto;
   width: 3rem;
 }
 body main #projects .see-more {
   text-align: center;
-  margin: 3rem 0 1rem 0;
+  margin: 2rem 0 1rem 0;
 }
 body main #projects .see-more a {
   text-decoration: none;
@@ -211,8 +306,18 @@ body main #contact #contact-form fieldset {
   border: none;
   margin: 1rem 0;
 }
+@media (min-width: 900px) {
+  body main #contact #contact-form fieldset label {
+    font-size: 1.25rem;
+  }
+}
 body main #contact #contact-form fieldset input, body main #contact #contact-form fieldset textarea {
   width: 100%;
+}
+@media (min-width: 900px) {
+  body main #contact #contact-form fieldset input, body main #contact #contact-form fieldset textarea {
+    font-size: 1.25rem;
+  }
 }
 body main #contact #contact-form button {
   border: none;
@@ -244,11 +349,21 @@ h2 {
   margin-bottom: 0.75rem;
   margin-top: 2rem;
 }
+@media (min-width: 900px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+}
 
 h3 {
   font-weight: 600;
   font-size: 1.25rem;
   margin-bottom: 0.75rem;
+}
+@media (min-width: 900px) {
+  h3 {
+    font-size: 1.25rem;
+  }
 }
 
 h4 {
@@ -257,7 +372,28 @@ h4 {
   margin-bottom: 0.75rem;
   margin-top: 2rem;
 }
+@media (min-width: 900px) {
+  h4 {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 900px) {
+  p {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 900px) {
+  a {
+    font-size: 1rem;
+  }
+}
 
 li {
   list-style: none;
+}
+
+#hero, .tech-stack, #about, #projects, #contact {
+  margin-bottom: 7.5rem;
 }/*# sourceMappingURL=style.css.map */
