@@ -371,6 +371,10 @@ h3 {
   font-weight: 600;
   font-size: 1.25rem;
   margin-bottom: 0.75rem;
+  background-color: #2C2C2C;
+  padding: 0.5rem 1rem;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 @media (min-width: 900px) {
   h3 {
@@ -408,4 +412,9 @@ li {
 
 #hero, .tech-stack, #about, #projects, #contact {
   margin-bottom: 7.5rem;
+}
+
+img {
+  width: 100%;
+  height: auto;
 }/*# sourceMappingURL=style.css.map */
