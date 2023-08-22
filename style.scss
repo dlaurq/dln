@@ -160,12 +160,15 @@ body {
 
       #about { }
 
-      #projects {
+      #projects {display: flex; flex-direction: column; justify-content: flex-start; gap: 3.5rem;
         .project { border: $highlight 2px solid; padding: 1rem; margin-bottom: 1rem;
-          @media (min-width: $medium) { display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: 5rem; border: none; padding: 0; } 
+          @media (min-width: $medium) { display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: 5rem; border: none; padding: 0; 
+            &:nth-child(odd){ flex-direction: row-reverse; }
+          } 
           .project-text {
+            h3 { color: $highlight; }
             .project-stack {
-              ul { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;
+              ul { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; align-items: center; gap: 1rem;
                 li {
                   img { height: auto; width: 3rem; 
                     @media (min-width: $medium) { width: 4rem; }

@@ -230,6 +230,12 @@ body main .tech-stack ul li img {
   height: auto;
   width: 4rem;
 }
+body main #projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 3.5rem;
+}
 body main #projects .project {
   border: #F25757 2px solid;
   padding: 1rem;
@@ -245,12 +251,18 @@ body main #projects .project {
     border: none;
     padding: 0;
   }
+  body main #projects .project:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
+}
+body main #projects .project .project-text h3 {
+  color: #F25757;
 }
 body main #projects .project .project-text .project-stack ul {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
 }
