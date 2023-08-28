@@ -91,7 +91,6 @@ body #hero {
   background-color: #171717;
   color: #F4F4F4;
   padding: 0 2rem;
-  min-height: 100vh;
 }
 body #hero header h1 {
   font-size: 1.75rem;
@@ -99,7 +98,7 @@ body #hero header h1 {
   z-index: 1100;
   position: relative;
   background-color: #171717;
-  padding: 0.5rem 0;
+  padding: 1rem 0;
 }
 body #hero header h1 a {
   color: #F25757;
@@ -115,7 +114,7 @@ body #hero header .mobile-nav-toggle {
     background: url("./svgs/bars-solid.svg");
     width: 1.25rem;
     aspect-ratio: 1;
-    top: 1.25rem;
+    top: 1.75rem;
     right: 2rem;
     background-repeat: no-repeat;
     border: 0;
@@ -152,6 +151,119 @@ body #hero header nav ul li {
 body #hero header nav ul li a {
   color: #F4F4F4;
 }
+body #hero .hero-img {
+  padding-bottom: 1rem;
+}
+body #hero .hero-text h2 {
+  text-transform: uppercase;
+  padding: 0.5rem 0;
+}
+body #hero .hero-text p {
+  font-weight: 200;
+}
+body #hero .hero-btns {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 1rem 0 2rem;
+}
+body #hero .hero-btns a img {
+  filter: invert(1);
+}
+body .tech-stack {
+  background-color: #e0e0e0;
+  padding: 2rem;
+}
+body .tech-stack ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 1rem;
+}
+body main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4rem;
+}
+body main h2 {
+  padding-bottom: 1rem;
+}
+body main h3 {
+  color: #F25757;
+  padding-bottom: 0.5rem;
+}
+body main h4 {
+  padding: 0.5rem 0;
+}
+body main #about {
+  padding: 2rem 2rem 0;
+}
+body main #projects {
+  padding: 0 2rem 2rem;
+}
+body main #projects .project {
+  padding-bottom: 6rem;
+}
+body main #projects .project:last-child {
+  padding-bottom: 0;
+}
+body main #projects .project .project-text .project-stack {
+  padding: 1rem 0;
+}
+body main #projects .project .project-text .project-stack ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.5rem;
+}
+body main #projects .project .project-actions .project-imgs img {
+  width: 100%;
+}
+body main #projects .project .project-actions .project-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 1rem;
+}
+body main #projects .project .project-actions .project-links a {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  background-color: #E9DF00;
+}
+body main #contact {
+  background-color: #e0e0e0;
+  padding: 2rem;
+  width: 100%;
+}
+body main #contact #contact-form fieldset {
+  border: none;
+  margin: 1rem 0;
+}
+body main #contact #contact-form fieldset input, body main #contact #contact-form fieldset textarea {
+  width: 100%;
+}
+body main #contact #contact-form button {
+  border: none;
+  width: 100%;
+  background-color: #E9DF00;
+  padding: 0.5rem 0;
+}
+body footer {
+  background-color: #171717;
+}
 
 a {
   text-decoration: none;
@@ -160,4 +272,23 @@ a {
 
 li {
   list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+h4 {
+  font-weight: 600;
 }/*# sourceMappingURL=style.css.map */
