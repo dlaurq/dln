@@ -83,338 +83,81 @@ svg {
 body {
   font-family: "Poppins", sans-serif;
   background-color: #F4F4F4;
-  color: #2C2C2C;
+  color: #171717;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
-body header {
-  border-bottom: #2C2C2C 2px solid;
-  min-height: 15vh;
+body #hero {
+  background-color: #171717;
+  color: #F4F4F4;
+  padding: 0 2rem;
+  min-height: 100vh;
 }
-@media (min-width: 580px) {
-  body header {
-    min-height: auto;
-    padding-bottom: 1rem;
-  }
-}
-@media (min-width: 580px) {
-  body header nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-}
-body header nav h1 {
-  margin: 1rem 0 0 1rem;
-}
-body header nav h1 a {
+body #hero header h1 {
+  font-size: 1.75rem;
   font-weight: 600;
-  text-decoration: none;
-  color: #F25757;
-  font-size: 2rem;
+  z-index: 1100;
+  position: relative;
+  background-color: #171717;
+  padding: 0.5rem 0;
 }
-@media (min-width: 900px) {
-  body header nav h1 a {
-    font-size: 2.5rem;
-  }
-}
-body header nav ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 1rem;
-}
-@media (min-width: 580px) {
-  body header nav ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
-    margin-bottom: 0;
-  }
-}
-body header nav ul li a {
-  text-decoration: none;
-  color: #2C2C2C;
-  font-size: 1.25rem;
-}
-@media (min-width: 900px) {
-  body header nav ul li a {
-    font-size: 1.5rem;
-  }
-}
-body main {
-  margin: 1rem;
-}
-@media (min-width: 580px) {
-  body main {
-    margin: 3rem 7.5rem;
-  }
-}
-@media (min-width: 1400px) {
-  body main {
-    margin: 7.5rem 22.5rem;
-  }
-}
-body main #hero {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-@media (min-width: 900px) {
-  body main #hero {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: start;
-  }
-}
-@media (min-width: 900px) {
-  body main #hero .hero-text {
-    order: 1;
-    flex: 1 0 50%;
-    height: -moz-fit-content;
-    height: fit-content;
-    margin-right: 0.5rem;
-    align-self: center;
-  }
-}
-body main #hero .hero-text h2 {
-  margin-top: 0;
-}
-body main #hero .hero-text p {
-  margin-bottom: 1rem;
-}
-body main #hero .hero-btns {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 2rem 0 0;
-}
-@media (min-width: 900px) {
-  body main #hero .hero-btns {
-    order: 3;
-    flex: 1 0 50%;
-  }
-}
-body main #hero .hero-btns a {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-body main #hero .hero-btns a img {
-  height: auto;
-  width: 2rem;
-  margin-left: 1rem;
-}
-@media (min-width: 900px) {
-  body main #hero .hero-img {
-    max-width: 20rem;
-    order: 2;
-    flex: 1 0 100%;
-  }
-}
-body main #hero .hero-img img {
-  height: auto;
-  width: 100%;
-}
-body main .tech-stack ul {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 1.5rem;
-  align-items: center;
-}
-body main .tech-stack ul li img {
-  height: auto;
-  width: 4rem;
-}
-body main #projects {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 3.5rem;
-}
-body main #projects .project {
-  border: #F25757 2px solid;
-  padding: 1rem;
-  margin-bottom: 1rem;
-}
-@media (min-width: 900px) {
-  body main #projects .project {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 5rem;
-    border: none;
-    padding: 0;
-  }
-  body main #projects .project:nth-child(odd) {
-    flex-direction: row-reverse;
-  }
-}
-body main #projects .project .project-text h3 {
+body #hero header h1 a {
   color: #F25757;
 }
-body main #projects .project .project-text .project-stack ul {
+body #hero header .mobile-nav-toggle {
+  display: none;
+}
+@media (max-width: 500px) {
+  body #hero header .mobile-nav-toggle {
+    display: block;
+    position: absolute;
+    z-index: 9999;
+    background: url("./svgs/bars-solid.svg");
+    width: 1.25rem;
+    aspect-ratio: 1;
+    top: 1.25rem;
+    right: 2rem;
+    background-repeat: no-repeat;
+    border: 0;
+  }
+  body #hero header .mobile-nav-toggle[aria-expended=true] {
+    background: url(./svgs/x-solid.svg);
+    background-repeat: no-repeat;
+  }
+}
+body #hero header nav ul {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
   gap: 1rem;
+  flex-direction: row;
 }
-body main #projects .project .project-text .project-stack ul li img {
-  height: auto;
-  width: 3rem;
-}
-@media (min-width: 900px) {
-  body main #projects .project .project-text .project-stack ul li img {
-    width: 4rem;
+@media (max-width: 500px) {
+  body #hero header nav ul {
+    flex-direction: column;
+    position: absolute;
+    background-color: #171717;
+    width: 80%;
+    padding: 1rem 0;
+    transform: translateY(-120%);
+    transition: transform 350ms ease-in;
+    z-index: 1000;
+  }
+  body #hero header nav ul[data-visible=true] {
+    transform: translateY(0%);
+    border-top: 4px solid #E9DF00;
   }
 }
-body main #projects .project .project-actions .project-imgs {
-  margin: 2rem 0;
-}
-@media (min-width: 1400px) {
-  body main #projects .project .project-actions .project-imgs {
-    width: 25rem;
-  }
-}
-body main #projects .project .project-actions .project-links {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-body main #projects .project .project-actions .project-links a {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  text-decoration: none;
-  padding: 0.25rem 0.5rem;
-}
-body main #projects .project .project-actions .project-links a img {
-  height: auto;
-  width: 3rem;
-}
-body main #projects .see-more {
-  text-align: center;
-  margin: 2rem 0 1rem 0;
-}
-body main #projects .see-more a {
-  text-decoration: none;
-  color: #F25757;
+body #hero header nav ul li {
   font-size: 1.25rem;
 }
-body main #projects .see-more a:hover {
-  color: rgba(242, 87, 87, 0.6);
-}
-body main #contact #contact-form fieldset {
-  border: none;
-  margin: 1rem 0;
-}
-@media (min-width: 900px) {
-  body main #contact #contact-form fieldset label {
-    font-size: 1.25rem;
-  }
-}
-body main #contact #contact-form fieldset input, body main #contact #contact-form fieldset textarea {
-  width: 100%;
-}
-@media (min-width: 900px) {
-  body main #contact #contact-form fieldset input, body main #contact #contact-form fieldset textarea {
-    font-size: 1.25rem;
-  }
-}
-body main #contact #contact-form button {
-  border: none;
-  width: 100%;
-}
-body footer {
-  background: #2C2C2C;
-  width: 100%;
-  min-height: 5rem;
+body #hero header nav ul li a {
+  color: #F4F4F4;
 }
 
-.btn {
+a {
   text-decoration: none;
-  background-color: #E9DF00;
-  padding: 0.75rem;
-  font-weight: 600;
-  color: #2C2C2C;
-  display: block;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-.btn:hover {
-  background-color: rgba(233, 223, 0, 0.6);
-}
-
-h2 {
-  font-weight: 600;
-  font-size: 1.5rem;
-  margin-bottom: 0.75rem;
-  margin-top: 2rem;
-}
-@media (min-width: 900px) {
-  h2 {
-    font-size: 1.5rem;
-  }
-}
-
-h3 {
-  font-weight: 600;
-  font-size: 1.25rem;
-  margin-bottom: 0.75rem;
-  background-color: #2C2C2C;
-  padding: 0.5rem 1rem;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-@media (min-width: 900px) {
-  h3 {
-    font-size: 1.25rem;
-  }
-}
-
-h4 {
-  font-weight: 600;
-  font-size: 1rem;
-  margin-bottom: 0.75rem;
-  margin-top: 2rem;
-}
-@media (min-width: 900px) {
-  h4 {
-    font-size: 1rem;
-  }
-}
-
-@media (min-width: 900px) {
-  p {
-    font-size: 1rem;
-  }
-}
-
-@media (min-width: 900px) {
-  a {
-    font-size: 1rem;
-  }
+  color: #171717;
 }
 
 li {
   list-style: none;
-}
-
-#hero, .tech-stack, #about, #projects, #contact {
-  margin-bottom: 7.5rem;
-}
-
-img {
-  width: 100%;
-  height: auto;
 }/*# sourceMappingURL=style.css.map */
