@@ -101,6 +101,11 @@ body #hero {
     padding: 0 6rem 3rem;
   }
 }
+@media (min-width: 1720px) {
+  body #hero {
+    padding: 0 15rem 3rem;
+  }
+}
 body #hero header {
   display: flex;
   flex-direction: row;
@@ -110,6 +115,11 @@ body #hero header {
 @media (max-width: 530px) {
   body #hero header {
     display: block;
+  }
+}
+@media (min-width: 900px) {
+  body #hero header {
+    padding: 1rem 0;
   }
 }
 body #hero header h1 {
@@ -123,6 +133,11 @@ body #hero header h1 {
 @media (min-width: 900px) {
   body #hero header h1 {
     font-size: 2rem;
+  }
+}
+@media (min-width: 1200px) {
+  body #hero header h1 {
+    font-size: 2.25rem;
   }
 }
 body #hero header h1 a {
@@ -170,6 +185,11 @@ body #hero header nav ul {
     border-top: 4px solid #E9DF00;
   }
 }
+@media (min-width: 1200px) {
+  body #hero header nav ul {
+    gap: 3rem;
+  }
+}
 body #hero header nav ul li {
   font-size: 1.25rem;
 }
@@ -188,7 +208,7 @@ body #hero main {
   body #hero main {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
   }
 }
@@ -198,7 +218,7 @@ body #hero main .hero-img {
 @media (min-width: 650px) {
   body #hero main .hero-img img {
     height: auto;
-    width: 50rem;
+    width: 35rem;
   }
 }
 body #hero main .hero-text h2 {
@@ -207,7 +227,7 @@ body #hero main .hero-text h2 {
 }
 body #hero main .hero-text p {
   font-weight: 200;
-  max-width: 75ch;
+  max-width: 45ch;
 }
 body #hero main .hero-btns {
   display: flex;
@@ -218,6 +238,12 @@ body #hero main .hero-btns {
 body #hero main .hero-btns a img {
   filter: invert(1);
 }
+@media (min-width: 1200px) {
+  body #hero main .hero-btns a img {
+    width: 2.5rem;
+    height: auto;
+  }
+}
 body .tech-stack {
   background-color: #e0e0e0;
   padding: 2rem;
@@ -225,6 +251,11 @@ body .tech-stack {
 @media (min-width: 900px) {
   body .tech-stack {
     padding: 2rem 6rem;
+  }
+}
+@media (min-width: 1720px) {
+  body .tech-stack {
+    padding: 2rem 15rem;
   }
 }
 body .tech-stack ul {
@@ -235,6 +266,17 @@ body .tech-stack ul {
   justify-content: flex-start;
   align-items: center;
   padding-top: 1rem;
+}
+@media (min-width: 1200px) {
+  body .tech-stack ul {
+    gap: 4rem;
+  }
+}
+@media (min-width: 1200px) {
+  body .tech-stack ul li img {
+    width: 5rem;
+    height: auto;
+  }
 }
 body main {
   display: flex;
@@ -261,6 +303,11 @@ body main #about {
     padding: 2rem 6rem 0;
   }
 }
+@media (min-width: 1720px) {
+  body main #about {
+    padding: 2rem 15rem 0;
+  }
+}
 body main #projects {
   padding: 0 2rem 2rem;
 }
@@ -269,12 +316,26 @@ body main #projects {
     padding: 0 6rem 2rem;
   }
 }
+@media (min-width: 1720px) {
+  body main #projects {
+    padding: 0 15rem 2rem;
+  }
+}
 body main #projects .project {
   padding-bottom: 6rem;
 }
 @media (min-width: 900px) {
   body main #projects .project {
     padding-bottom: 10rem;
+  }
+}
+@media (min-width: 1200px) {
+  body main #projects .project {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 5rem;
   }
 }
 body main #projects .project:last-child {
@@ -290,8 +351,20 @@ body main #projects .project .project-text .project-stack ul {
   align-items: center;
   gap: 1.5rem;
 }
+@media (min-width: 1200px) {
+  body main #projects .project .project-text .project-stack ul li img {
+    width: 4rem;
+    height: auto;
+  }
+}
 body main #projects .project .project-actions .project-imgs img {
   width: 100%;
+}
+@media (min-width: 1200px) {
+  body main #projects .project .project-actions .project-imgs img {
+    width: 80rem;
+    height: auto;
+  }
 }
 body main #projects .project .project-actions .project-links {
   display: flex;
@@ -311,6 +384,16 @@ body main #projects .project .project-actions .project-links a {
   padding: 0.25rem 0.5rem;
   background-color: #E9DF00;
 }
+@media (min-width: 900px) {
+  body main #projects .project .project-actions .project-links a {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 1200px) {
+  body main #projects .project .project-actions .project-links a {
+    font-size: 1.5rem;
+  }
+}
 body main #contact {
   background-color: #e0e0e0;
   padding: 2rem;
@@ -319,6 +402,11 @@ body main #contact {
 @media (min-width: 900px) {
   body main #contact {
     padding: 2rem 6rem;
+  }
+}
+@media (min-width: 1720px) {
+  body main #contact {
+    padding: 2rem 15rem;
   }
 }
 body main #contact #contact-form fieldset {
@@ -379,6 +467,11 @@ h2 {
     font-size: 1.75rem;
   }
 }
+@media (min-width: 1200px) {
+  h2 {
+    font-size: 2rem;
+  }
+}
 
 h3 {
   font-size: 1.25rem;
@@ -387,6 +480,11 @@ h3 {
 @media (min-width: 900px) {
   h3 {
     font-size: 1.5rem;
+  }
+}
+@media (min-width: 1200px) {
+  h3 {
+    font-size: 1.75rem;
   }
 }
 
@@ -398,6 +496,11 @@ h4 {
     font-size: 1.25rem;
   }
 }
+@media (min-width: 1200px) {
+  h4 {
+    font-size: 1.5rem;
+  }
+}
 
 p {
   max-width: 75ch;
@@ -405,5 +508,10 @@ p {
 @media (min-width: 900px) {
   p {
     font-size: 1.25rem;
+  }
+}
+@media (min-width: 1200px) {
+  p {
+    font-size: 1.5rem;
   }
 }/*# sourceMappingURL=style.css.map */
