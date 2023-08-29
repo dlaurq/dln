@@ -91,55 +91,77 @@ $black2: #2C2C2C;
 $highlight: #F25757;
 $btn: #E9DF00;
 
-$small: 580px;
+$small: 650px;
 $medium: 900px;
 $large: 1400px;
+$mobile-nav: 530px;
 
+html {scroll-behavior: smooth;}
 
 body { font-family: 'Poppins', sans-serif; background-color: $white; color: $black; min-height: 100vh; overflow-x: hidden;
   
   #hero { background-color: $black; color: $white; padding: 0 2rem; 
-    header {
+    @media (min-width: $medium) { padding: 0 6rem 3rem; } 
+    header {display: flex; flex-direction: row; justify-content: space-between; align-items: center;
+      @media (max-width: $mobile-nav) { display: block; }
+      @media (min-width: $medium) {  }
       h1 { font-size: 1.75rem; font-weight: 600; z-index: 1100; position: relative; background-color: $black; padding: 1rem 0;
+        @media (min-width: $medium) { font-size: 2rem; } 
         a { color: $highlight; }
       }
       .mobile-nav-toggle { display: none;
-        @media (max-width: 500px) { display: block; position: absolute; z-index: 9999; background: url("./svgs/bars-solid.svg"); width: 1.25rem; aspect-ratio: 1; top: 1.75rem; right: 2rem; background-repeat: no-repeat; border: 0;  
+        @media (max-width: $mobile-nav) { display: block; position: absolute; z-index: 9999; background: url("./svgs/bars-solid.svg"); width: 1.25rem; aspect-ratio: 1; top: 1.75rem; right: 2rem; background-repeat: no-repeat; border: 0;  
           &[aria-expended=true] { background: url(./svgs/x-solid.svg); background-repeat: no-repeat; }
         }
       }
       nav {
         ul { display: flex; gap: 1rem; flex-direction: row; 
-          @media (max-width: 500px) { flex-direction: column;  position: absolute; background-color: $black; width: 80%; padding: 1rem 0; transform: translateY(-120%); transition: transform 350ms ease-in; z-index: 1000;
+          @media (max-width: $mobile-nav) { flex-direction: column;  position: absolute; background-color: $black; width: 80%; padding: 1rem 0; transform: translateY(-120%); transition: transform 350ms ease-in; z-index: 1000;
             &[data-visible=true] { transform: translateY(0%); border-top: 4px solid $btn; }
           }
           li { font-size: 1.25rem;
-            a { color: $white; }
+            a { color: $white; 
+              @media (min-width: $medium) { font-size: 1.5rem; } }
           }
         }
       }
     }
-    .hero-img { padding-bottom: 1rem; }
-    .hero-text { 
-      h2 { text-transform: uppercase; padding: 0.5rem 0; }
-      p { font-weight: 200; }
-    }
-    .hero-btns { display: flex; flex-direction: row; gap: 2rem; padding: 1rem 0 2rem;
-      a { 
-        img { filter: invert(1); }
+    main { display: block;
+      @media (min-width: $small) { display: flex; flex-direction: row; justify-content: space-between; align-items: center; }
+      .hero-img { padding-bottom: 1rem; 
+        img {
+          @media (min-width: $small) { height: auto; width: 50rem; }
+        }
+      }
+      .hero-text { 
+        h2 { text-transform: uppercase; padding: 0.5rem 0; }
+        p { font-weight: 200; max-width: 75ch; }
+      }
+      .hero-btns { display: flex; flex-direction: row; gap: 2rem; padding: 1rem 0 2rem;
+        a { 
+          
+          img { filter: invert(1); }
+        }
       }
     }
-   }
-    .tech-stack { background-color: $gray; padding:2rem;
-      ul { display: flex; flex-direction: row; flex-wrap: wrap; gap: 2rem; justify-content: flex-start; align-items: center; padding-top: 1rem; }
-    }
-   main { display: flex; flex-direction: column; justify-content: flex-start; align-items: center; gap: 4rem; 
+  }
+
+  .tech-stack { background-color: $gray; padding: 2rem;
+    @media (min-width: $medium) { padding: 2rem 6rem; } 
+    ul { display: flex; flex-direction: row; flex-wrap: wrap; gap: 2rem; justify-content: flex-start; align-items: center; padding-top: 1rem; }
+  }
+
+  main { display: flex; flex-direction: column; justify-content: flex-start; align-items: start; gap: 4rem; 
     h2 { padding-bottom: 1rem; }
     h3 { color: $highlight; padding-bottom: 0.5rem; }
     h4 { padding: 0.5rem 0; }
-    #about { padding: 2rem 2rem 0;}
+    #about { padding: 2rem 2rem 0;
+      @media (min-width: $medium) { padding: 2rem 6rem 0; } 
+    }
     #projects { padding: 0 2rem 2rem;
+      @media (min-width: $medium) { padding: 0 6rem 2rem; } 
       .project { padding-bottom: 6rem;
+        @media (min-width: $medium) { padding-bottom: 10rem; } 
         &:last-child { padding-bottom: 0;}
         .project-text {
           .project-stack { padding: 1rem 0;
@@ -158,23 +180,39 @@ body { font-family: 'Poppins', sans-serif; background-color: $white; color: $bla
     }
 
     #contact { background-color: $gray; padding: 2rem; width: 100%;
+      @media (min-width: $medium) { padding: 2rem 6rem; } 
       #contact-form { 
         fieldset { border: none; margin: 1rem 0;
-          label {   }
-          input, textarea { width: 100%;  }
+          label { 
+            @media (min-width: $medium) { font-size: 1.25rem; }  
+          }
+          input, textarea { width: 100%; display: block; max-width: 40rem; 
+            @media (min-width: $medium) { font-size: 1.25rem; } 
+          }
         }
-        button { border: none; width: 100%; background-color: $btn; padding: 0.5rem 0;}
+        button { border: none; width: 100%; background-color: $btn; padding: 0.5rem 0; max-width: 40rem;
+          @media (min-width: $medium) { font-size: 1.25rem; } 
+        }
       }
     }
 
-   }
+  }
 
-   footer { background-color: $black;}
+  footer { background-color: $black;}
 }
 
 a { text-decoration: none; color: $black; }
 li { list-style: none; }
 img { max-width: 100%; height: auto;}
-h2 { font-size: 1.5rem; font-weight: 600; }
-h3 { font-size: 1.25rem; font-weight: 600;}
-h4 { font-weight: 600;}
+h2 { font-size: 1.5rem; font-weight: 600; 
+  @media (min-width: $medium) { font-size: 1.75rem; } 
+}
+h3 { font-size: 1.25rem; font-weight: 600;
+  @media (min-width: $medium) { font-size: 1.5rem; } 
+}
+h4 { font-weight: 600;
+  @media (min-width: $medium) { font-size: 1.25rem; } 
+}
+p { max-width: 75ch;
+  @media (min-width: $medium) { font-size: 1.25rem; } 
+}
