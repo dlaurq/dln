@@ -108,8 +108,11 @@
         
 
         <section id="about">
-            <h2>About</h2>
-            <p>My passion for programming began at the age of 14 and has taken me through various stages, from creating Minecraft mods to designing games, and now building web applications.</p>
+            <section class="about-text">
+                <h2>About</h2>
+                <p>My passion for programming began at the age of 14 and has taken me through various stages, from creating Minecraft mods to designing games, and now building web applications.</p>    
+            </section>
+            <img src="./imgs/old-pc.webp" alt="old pc">
             
         </section>
 
@@ -280,31 +283,37 @@
         </section>
 
         <section id="contact">
-            <h2>Contact</h2>
 
-            <form action="https://formsubmit.co/f97f16895e21eb16a2f95793ef040a0a" method="POST" id="contact-form">
-                <input type="hidden" name="_next" value="https://dln.vercel.app/">
-                <input type="hidden" name="_subject" value="New submission!">
-                <fieldset>
-                    <label for="name">Name*</label>
-                    <input type="text" name="name" id="name" required>
-                </fieldset>
-                <fieldset>
-                    <label for="email">Email*</label>
-                    <input type="email" name="email" id="email" required>
-                </fieldset>
-                <fieldset>
-                    <label for="message">Message*</label>
-                    <textarea name="message" id="message" rows="5" required></textarea>
-                </fieldset>
+            <section class="form-area">
+                <h2>Contact</h2>
 
-                <button type="submit" class="btn">Send</button>
-            </form>
+                <form action="https://formsubmit.co/f97f16895e21eb16a2f95793ef040a0a" method="POST" id="contact-form">
+                    <input type="hidden" name="_next" value="https://dln.vercel.app/">
+                    <input type="hidden" name="_subject" value="New submission!">
+                    <fieldset>
+                        <label for="name">Name*</label>
+                        <input type="text" name="name" id="name" required>
+                    </fieldset>
+                    <fieldset>
+                        <label for="email">Email*</label>
+                        <input type="email" name="email" id="email" required>
+                    </fieldset>
+                    <fieldset>
+                        <label for="message">Message*</label>
+                        <textarea name="message" id="message" rows="5" required></textarea>
+                    </fieldset>
+    
+                    <button type="submit" class="btn">Send</button>
+                </form>
+            </section>
+
+            <img src="./imgs/cat.webp" alt="a cat">
+            
         </section>
 
     </main>
 
-    <footer> o/</footer>
+    <footer> &copy; All rights reserved.</footer>
 
 </body>
 </html>

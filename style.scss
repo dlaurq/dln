@@ -84,6 +84,20 @@ svg {
     font-style: normal;
 }
 
+@mixin gray-gradient { background: linear-gradient(to right,  $gray 0%, rgba($gray, 0) 100%); }
+@mixin black-gradient { background: linear-gradient(to top,  $black 0%, rgba($black, 0) 100%); }
+
+@keyframes scrollX {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-120px * 9))}
+  
+}
+
+@keyframes scrollY {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(calc(-120px * 9))}
+}
+
 $white: #F4F4F4;
 $gray: #e0e0e0;
 $black: #171717;
@@ -96,6 +110,8 @@ $medium: 900px;
 $large: 1200px;
 $xl: 1720px;
 $mobile-nav: 530px;
+
+$animationSpeed: 10s;
 
 html {scroll-behavior: smooth;}
 
@@ -138,7 +154,7 @@ body { font-family: 'Poppins', sans-serif; background-color: $white; color: $bla
         }
       }
       .hero-text { 
-        h2 { text-transform: uppercase; padding: 0.5rem 0; }
+        h2 { text-transform: uppercase; padding: 0.5rem 0; z-index: 10; position: relative; }
         p { font-weight: 200; max-width: 45ch; z-index: 10; position: relative;}
       }
       .hero-btns { display: flex; flex-direction: row; gap: 2rem; padding: 1rem 0 2rem;
@@ -151,26 +167,39 @@ body { font-family: 'Poppins', sans-serif; background-color: $white; color: $bla
     }
   }
 
-  .tech-stack { background-color: $gray; padding: 2rem;
-    @media (min-width: $medium) { padding: 2rem 6rem; } 
-    @media (min-width: $xl) { padding: 2rem 15rem; } 
-    ul { display: flex; flex-direction: row; flex-wrap: wrap; gap: 2rem; justify-content: flex-start; align-items: center; padding-top: 1rem; 
-      @media (min-width: $large) { gap: 4rem;}
-      li {
-        img {
-          @media (min-width: $large) { width: 5rem; height: auto;}
-        }
-      }
+  .slider { background: $gray; overflow:hidden; position: relative;
+    @media (min-width: $medium) { opacity: 0.4; position: absolute; height: 375px; top: 15%; left: 80%; background-color: $black; z-index: 0;width: 150px; }
+      @media (min-width: $large) { height: 450px;}
+      @media (min-width: $xl) { height: 550px;}
+    h2 { padding: 2rem 2rem 0;
+      @media (min-width: $medium) { color: $white; white-space: nowrap; position: relative; top: -10%; left: 45%; writing-mode: vertical-rl; text-orientation: upright; letter-spacing: -1px; }
+      @media (min-width: $large) { top: -7%;}
+    }
+    &::before, &::after { @include gray-gradient; content: ""; height: 120px; position: absolute; width: 70px; z-index: 2;
+      @media (min-width: $medium) { @include black-gradient; width: 120px; height: 100px; }
+    }
+    &::after { right: 0; top: 4rem; transform: rotateZ(180deg);
+      @media (min-width: $medium) { top: -5%; left: 10%; width: 80px; }
+    }
+    &::before { left: 0; top: 4rem;
+      @media (min-width: $medium) { top: auto; bottom: -5%; left: 12%; width: 85px; }
+    }
+    .slide-track { animation: scrollX $animationSpeed linear infinite; display: flex; width: calc(120px * 18); align-items: center;
+      @media (min-width: $medium) { width: 120px; height: calc(120px * 18); flex-direction: column; animation: scrollY $animationSpeed linear infinite; position: relative; bottom: 100%; }
+    }
+    .slide { height: 120px; width: 120px; display: flex; align-items: center; justify-content: center;
     }
   }
 
-  main { display: flex; flex-direction: column; justify-content: flex-start; align-items: start; gap: 4rem; 
+  main { display: flex; flex-direction: column; justify-content: flex-start; align-items: start; gap: 2rem; 
     h2 { padding-bottom: 1rem; }
     h3 { color: $highlight; padding-bottom: 0.5rem; }
     h4 { padding: 0.5rem 0; }
-    #about { padding: 2rem 2rem 0;
-      @media (min-width: $medium) { padding: 2rem 6rem 0; } 
-      @media (min-width: $xl) { padding: 2rem 15rem 0; } 
+    #about { padding: 2rem 2rem; width: 100%;
+      @media (min-width: $medium) { padding: 2rem 6rem; background-color: $gray; display: flex;  flex-direction: row;} 
+      @media (min-width: $xl) { padding: 2rem 15rem; } 
+      p { padding-bottom: 2rem;}
+      img { margin: 0 auto;}
     }
     #projects { padding: 0 2rem 2rem;
       @media (min-width: $medium) { padding: 0 6rem 2rem; } 
@@ -210,20 +239,25 @@ body { font-family: 'Poppins', sans-serif; background-color: $white; color: $bla
 
     #contact { background-color: $gray; padding: 2rem; width: 100%;
       @media (min-width: $medium) { padding: 2rem 6rem; } 
+      @media (min-width: $medium) { display: grid; grid-template-columns: 1fr 1fr; }
       @media (min-width: $xl) { padding: 2rem 15rem; } 
       
-      #contact-form { 
+      img { display: none;
+        @media (min-width: $medium) { display: block; justify-self: end; align-self: end; padding-top: 6rem; padding-left: 2rem;; }
+      }
+
+      #contact-form { width: 100%;
         fieldset { border: none; margin: 1rem 0;
           label { 
             @media (min-width: $medium) { font-size: 1.25rem; }  
             @media (min-width: $large) { font-size: 1.5rem; } 
           }
-          input, textarea { width: 100%; display: block; max-width: 40rem; 
+          input, textarea { width: 100%; display: block; 
             @media (min-width: $medium) { font-size: 1.25rem; } 
             @media (min-width: $large) { font-size: 1.5rem; } 
           }
         }
-        button { border: none; width: 100%; background-color: $btn; padding: 0.5rem 0; max-width: 40rem; color: $black;
+        button { border: none; width: 100%; background-color: $btn; padding: 0.5rem 0; color: $black;
           @media (min-width: $medium) { font-size: 1.25rem; } 
           @media (min-width: $large) { font-size: 1.5rem; } 
         }
@@ -232,7 +266,7 @@ body { font-family: 'Poppins', sans-serif; background-color: $white; color: $bla
 
   }
 
-  footer { background-color: $black;}
+  footer { background-color: $black; color: $gray; padding: 2rem; text-align: center;}
 }
 
 a { text-decoration: none; color: $black; }
@@ -254,6 +288,7 @@ p { max-width: 75ch;
   @media (min-width: $medium) { font-size: 1.25rem; } 
   @media (min-width: $large) { font-size: 1.5rem; } 
 }
+textarea { resize: none; }
 
 .anime-bar { text-decoration: none; color: $btn; position: relative;
   &::after { content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 2px; background-color: currentColor; transform: scaleX(0); transform-origin: right; transition: transform 250ms ease-in; }
@@ -265,130 +300,6 @@ p { max-width: 75ch;
   &:hover::after { transform: scaleX(1); transform-origin: left; }
 }
 
-
-
-//SLIDER ANIMATION Mobile
-
-
-  @mixin white-gradient {
-    background: linear-gradient(to right,  $gray 0%, rgba($gray, 0) 100%);
-  }
-
-  @mixin black-gradient {
-    background: linear-gradient(to top,  $black 0%, rgba($black, 0) 100%);
-  }
-  
-  $animationSpeed: 10s;
-  
-  // Animation
-  @keyframes scrollX {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-120px * 9))}
-    
-  }
-
-  @keyframes scrollY {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(calc(-120px * 9))}
-  }
-  
-  
-  // Styling
-  .slider {
-    @media (min-width: $medium) { 
-      opacity: 0.4;
-      position: absolute;
-      height: 375px;
-      top: 15%;
-      left: 80%;
-      background-color: $black;
-      z-index: 0;
-      width: 150px;
-     }
-     @media (min-width: $large) { height: 450px;}
-     @media (min-width: $xl) { height: 550px;}
-    background: $gray;
-  
-    overflow:hidden;
-    position: relative;
-  
-    h2 { padding: 2rem 2rem 0;
-      @media (min-width: $medium) {
-        color: $white;
-        white-space: nowrap;
-        position: relative;
-        top: -10%;
-        left: 45%;
-        writing-mode: vertical-rl;
-        text-orientation: upright;
-        letter-spacing: -1px;
-      }
-
-      @media (min-width: $large) { top: -7%;}
-    }
-    
-    &::before,
-    &::after {
-      @include white-gradient;
-      content: "";
-      height: 120px;
-      position: absolute;
-      width: 70px;
-      z-index: 2;
-
-      @media (min-width: $medium) { 
-        @include black-gradient;
-        width: 120px;
-        height: 100px;
-      }
-    }
-    
-    &::after {
-      
-      right: 0;
-      top: 4rem;
-      transform: rotateZ(180deg);
-
-      @media (min-width: $medium) { 
-        top: -5%;
-        left: 10%;
-        width: 80px;
-      }
-    }
-  
-    &::before {
-      left: 0;
-      top: 4rem;
-
-      @media (min-width: $medium) { 
-        top: auto;
-        bottom: -5%;
-        left: 12%;
-        width: 85px;
-      }
-    }
-    
-    .slide-track {
-      animation: scrollX $animationSpeed linear infinite;
-      display: flex;
-      width: calc(120px * 18);
-      align-items: center;
-
-      @media (min-width: $medium) { 
-        width: 120px;
-        height: calc(120px * 18);
-        flex-direction: column;
-        animation: scrollY $animationSpeed linear infinite;
-        position: relative;
-        bottom: 100%;
-      }
-    }
-    
-    .slide { height: 120px; width: 120px; display: flex; align-items: center; justify-content: center;
-    }
-  }
-
-
 .invert { 
   @media (min-width: $medium) {filter: invert(1);}
-  }
+}
