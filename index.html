@@ -16,55 +16,103 @@
 
     <link rel="stylesheet" href="style.css">
     <title>Laurentiu Dutu</title>
+    <script src="./main.js" defer></script>
 </head>
 <body>
+    <section id="hero">
+        <header>
+            <h1><a href="#hero" class="anime-bar">Laurentiu Dutu</a></h1>
+            <button aria-expended="false" class="mobile-nav-toggle"></button>
+            <nav>
+                <ul data-visible="false" class="hero-nav">
+                    <li><a href="#about" class="anime-bar">About</a></li>
+                    <li><a href="#projects" class="anime-bar">Projects</a></li>
+                    <li><a href="#contact" class="anime-bar">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <header>
-        <nav>
-            <h1><a href="#hero">Laurentiu Dutu</a></h1>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+        
 
-    <main>
-        <section id="hero">
-            <section class="hero-text">
-                <h2>Front-End Developer</h2>
-                <p>My goal is to contribute to improving the internet by developing products that are meaningful, responsive, and accessible to all users.</p>
-            </section>
+        <main>
             <section class="hero-img">
                 <img src="./imgs/eu.webp" alt="Profile picture" width="288" height="277" >
             </section>
-            <section class="hero-btns">
-                <a href="https://www.linkedin.com/in/dlaurq/" target="_blank" class="btn">Linkedin <img width="32" height="32" src="./svgs/iconmonstr-linkedin-3.svg" alt="Linkedin icon"></a>
-                <a href="https://github.com/dlaurq?tab=repositories" target="_blank" class="btn">Github <img width="32" height="32" src="./svgs/github-icon-1.svg" alt="Github Logo"></a>
+            
+            <section class="hero-content">
+                <section class="hero-text">
+                    <h2>Hi, I am a Frontend developer</h2>
+                    <p>My goal is to contribute to improving the internet by developing products that are meaningful, responsive, and accessible to all users.</p>
+                </section>
+                
+                <section class="hero-btns">
+                    <a href="https://www.linkedin.com/in/dlaurq/" target="_blank" class="btn"><img width="32" height="32" src="./svgs/iconmonstr-linkedin-3.svg" alt="Linkedin icon"></a>
+                    <a href="https://github.com/dlaurq?tab=repositories" target="_blank" class="btn"><img width="32" height="32" src="./svgs/github-icon-1.svg" alt="Github Logo"></a>
+                </section>
             </section>
             
-        </section>
+        </main>
+        
+        
+    </section>
 
+    <section class=" slider">
+        <!--
 
-        <section class="tech-stack">
-            <h2>Tech Stack</h2>
-            <ul class="tech-stack-list">
-                <li><img width="64" height="64" loading="lazy" src="./svgs/html-1.svg" alt="HTML Logo"></li>
-                <li><img width="64" height="64" loading="lazy" src="./svgs/css-3.svg" alt="CSS Logo"></li>
-                <li><img width="64" height="64" loading="lazy" src="./svgs/javascript-1.svg" alt="JS Logo"></li>
-                <li><img width="64" height="64" loading="lazy" src="./svgs/sass-1.svg" alt="SASS Logo"></li>
-                <li><img width="64" height="64" loading="lazy" src="./svgs/tailwindcss.svg" alt="Tailwind Logo"></li>
-                <li><img width="64" height="64" loading="lazy" src="./svgs/react-2.svg" alt="React Logo"></li>
-                <li><img width="64" height="64" loading="lazy" src="./svgs/nodejs-1.svg" alt="Node Logo"></li>
-                <li><img width="64" height="64" loading="lazy" src="./svgs/express-109.svg" alt="Express Logo"></li>
-                <li><img width="64" height="64" loading="lazy" src="./svgs/mysql-logo.svg" alt="MYSQL Logo"></li>
-            </ul>
-        </section>
+        -->
+        <h2>Tech Stack</h2>
+        <ul class=" slide-track">
+            <li class="slide"><img width="64" height="64" loading="lazy" src="./svgs/html-1.svg" alt="HTML Logo"></li>
+            <li class="slide"><img width="64" height="64" loading="lazy" src="./svgs/css-3.svg" alt="CSS Logo"></li>
+            <li class="slide"><img width="64" height="64" loading="lazy" src="./svgs/javascript-1.svg" alt="JS Logo"></li>
+            <li class="slide"><img width="64" height="64" loading="lazy" src="./svgs/sass-1.svg" alt="SASS Logo"></li>
+            <li class="slide"><img width="64" height="64" loading="lazy" src="./svgs/tailwindcss.svg" alt="Tailwind Logo"></li>
+            <li class="slide"><img width="64" height="64" loading="lazy" src="./svgs/react-2.svg" alt="React Logo"></li>
+            <li class="slide"><img width="64" height="64" loading="lazy" src="./svgs/nodejs-1.svg" alt="Node Logo"></li>
+            <li class="slide invert"><img width="64" height="64" loading="lazy" src="./svgs/express-109.svg" alt="Express Logo"></li>
+            <li class="slide"><img width="64" height="64" loading="lazy" src="./svgs/mysql-logo.svg" alt="MYSQL Logo"></li>
+            
+            <li class="slide"><img width="64" height="64" loading="lazy" src="./svgs/html-1.svg" alt="HTML Logo"></li>
+            <li class="slide"><img width="64" height="64" loading="lazy" src="./svgs/css-3.svg" alt="CSS Logo"></li>
+            <li class="slide"><img width="64" height="64" loading="lazy" src="./svgs/javascript-1.svg" alt="JS Logo"></li>
+            <li class="slide"><img width="64" height="64" loading="lazy" src="./svgs/sass-1.svg" alt="SASS Logo"></li>
+            <li class="slide"><img width="64" height="64" loading="lazy" src="./svgs/tailwindcss.svg" alt="Tailwind Logo"></li>
+            <li class="slide"><img width="64" height="64" loading="lazy" src="./svgs/react-2.svg" alt="React Logo"></li>
+            <li class="slide"><img width="64" height="64" loading="lazy" src="./svgs/nodejs-1.svg" alt="Node Logo"></li>
+            <li class="slide"><img width="64" height="64" loading="lazy" src="./svgs/express-109.svg" alt="Express Logo"></li>
+            <li class="slide"><img width="64" height="64" loading="lazy" src="./svgs/mysql-logo.svg" alt="MYSQL Logo"></li>
+        </ul>
+    </section>
+
+    <!--
+
+    
+
+    <section class="tech-stack">
+        <h2>Tech Stack</h2>
+        <ul class="tech-stack-list">
+            <li><img width="64" height="64" loading="lazy" src="./svgs/html-1.svg" alt="HTML Logo"></li>
+            <li><img width="64" height="64" loading="lazy" src="./svgs/css-3.svg" alt="CSS Logo"></li>
+            <li><img width="64" height="64" loading="lazy" src="./svgs/javascript-1.svg" alt="JS Logo"></li>
+            <li><img width="64" height="64" loading="lazy" src="./svgs/sass-1.svg" alt="SASS Logo"></li>
+            <li><img width="64" height="64" loading="lazy" src="./svgs/tailwindcss.svg" alt="Tailwind Logo"></li>
+            <li><img width="64" height="64" loading="lazy" src="./svgs/react-2.svg" alt="React Logo"></li>
+            <li><img width="64" height="64" loading="lazy" src="./svgs/nodejs-1.svg" alt="Node Logo"></li>
+            <li><img width="64" height="64" loading="lazy" src="./svgs/express-109.svg" alt="Express Logo"></li>
+            <li><img width="64" height="64" loading="lazy" src="./svgs/mysql-logo.svg" alt="MYSQL Logo"></li>
+        </ul>
+    </section>
+
+    -->
+    <main>
+        
 
         <section id="about">
-            <h2>About</h2>
-            <p>My passion for programming began at the age of 14 and has taken me through various stages, from creating Minecraft mods to designing games, and now building web applications.</p>
+            <section class="about-text">
+                <h2>About</h2>
+                <p>My passion for programming began at the age of 14 and has taken me through various stages, from creating Minecraft mods to designing games, and now building web applications.</p>    
+            </section>
+            <img src="./imgs/old-pc.webp" alt="old pc">
             
         </section>
 
@@ -232,38 +280,40 @@
                 
             </section>
             
-
-            <p class="see-more">
-                <a href="https://github.com/dlaurq?tab=repositories" target="_blank">See more projects</a>
-            </p>
         </section>
 
         <section id="contact">
-            <h2>Contact</h2>
 
-            <form action="https://formsubmit.co/f97f16895e21eb16a2f95793ef040a0a" method="POST" id="contact-form">
-                <input type="hidden" name="_next" value="https://dln.vercel.app/">
-                <input type="hidden" name="_subject" value="New submission!">
-                <fieldset>
-                    <label for="name">Name*</label>
-                    <input type="text" name="name" id="name" required>
-                </fieldset>
-                <fieldset>
-                    <label for="email">Email*</label>
-                    <input type="email" name="email" id="email" required>
-                </fieldset>
-                <fieldset>
-                    <label for="message">Message*</label>
-                    <textarea name="message" id="message" rows="5" required></textarea>
-                </fieldset>
+            <section class="form-area">
+                <h2>Contact</h2>
 
-                <button type="submit" class="btn">Send</button>
-            </form>
+                <form action="https://formsubmit.co/f97f16895e21eb16a2f95793ef040a0a" method="POST" id="contact-form">
+                    <input type="hidden" name="_next" value="https://dln.vercel.app/">
+                    <input type="hidden" name="_subject" value="New submission!">
+                    <fieldset>
+                        <label for="name">Name*</label>
+                        <input type="text" name="name" id="name" required>
+                    </fieldset>
+                    <fieldset>
+                        <label for="email">Email*</label>
+                        <input type="email" name="email" id="email" required>
+                    </fieldset>
+                    <fieldset>
+                        <label for="message">Message*</label>
+                        <textarea name="message" id="message" rows="5" required></textarea>
+                    </fieldset>
+    
+                    <button type="submit" class="btn">Send</button>
+                </form>
+            </section>
+
+            <img src="./imgs/cat.webp" alt="a cat">
+            
         </section>
 
     </main>
 
-    <footer>IDK</footer>
+    <footer> &copy; All rights reserved.</footer>
 
 </body>
 </html>

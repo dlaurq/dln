@@ -84,170 +84,222 @@ svg {
     font-style: normal;
 }
 
+@mixin gray-gradient { background: linear-gradient(to right,  $gray 0%, rgba($gray, 0) 100%); }
+@mixin black-gradient { background: linear-gradient(to top,  $black 0%, rgba($black, 0) 100%); }
+
+@keyframes scrollX {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-120px * 9))}
+  
+}
+
+@keyframes scrollY {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(calc(-120px * 9))}
+}
+
 $white: #F4F4F4;
-$black: #2C2C2C;
+$gray: #e0e0e0;
+$black: #171717;
+$black2: #2C2C2C;
 $highlight: #F25757;
 $btn: #E9DF00;
 
-$small: 580px;
+$small: 650px;
 $medium: 900px;
-$large: 1400px;
+$large: 1200px;
+$xl: 1720px;
+$mobile-nav: 530px;
 
+$animationSpeed: 10s;
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: $white;
-    color: $black;
+html {scroll-behavior: smooth;}
 
-    header {
-        border-bottom: $black 2px solid; min-height: 15vh;
-        @media (min-width: $small) { min-height: auto; padding-bottom: 1rem;}
-        nav {
-            @media (min-width: $small) { display: flex; flex-direction: row; justify-content: space-between; align-items: center;}
-            h1 { margin: 1rem 0 0 1rem;
-                a { font-weight: 600; text-decoration: none; color:$highlight; font-size: 2rem;
-                  @media (min-width: $medium) { font-size: 2.5rem; }
-                }
-            }
-            ul {
-                display: flex; flex-direction: row; justify-content: space-between; margin: 1rem; 
-                @media (min-width: $small) { display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: 2rem; margin-bottom: 0;
-                }
-                li {
-                    a { text-decoration: none; color: $black; font-size: 1.25rem;  
-                      @media (min-width: $medium) { font-size: 1.5rem; }
-                    }
-                }
-            }
-        }
-    }
-
-    main {
-      margin: 1rem;
-      @media (min-width: $small)  { margin: 3rem 7.5rem; }
-      @media (min-width: $large)  { margin: 7.5rem 22.5rem; }
-      #hero {
-         display: flex; flex-direction: column; justify-content: space-evenly;
-         @media (min-width: $medium) { flex-direction: row; flex-wrap: wrap; justify-content: start;}
-        .hero-text { 
-          @media (min-width: $medium) {order: 1; flex: 1 0 50%; height: fit-content; margin-right: 0.5rem; align-self: center;;}
-          h2 { margin-top: 0; }
-          p { margin-bottom: 1rem; }
-        }
-        .hero-btns { display: flex; flex-direction: row; justify-content: space-between; margin: 2rem 0 0;
-          @media (min-width: $medium) { order: 3; flex: 1 0 50%;}
-          a { display: flex; flex-direction: row; justify-content: space-between; align-items: center;
-            img { height: auto; width: 2rem; margin-left: 1rem;}
-          }
-        }
-        .hero-img { 
-          @media (min-width: $medium) { max-width: 20rem; order: 2; flex: 1 0 100%; }
-          img { height: auto; width: 100%; }
-        }
-
-      }
-
-      .tech-stack {
-        ul {
-          display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem; align-items: center;
-          li {
-            img { height: auto; width: 4rem;
-
-            }
-          }
-        }
-      }
-
-      #about { }
-
-      #projects {display: flex; flex-direction: column; justify-content: flex-start; gap: 3.5rem;
-        .project { border: $highlight 2px solid; padding: 1rem; margin-bottom: 1rem;
-          @media (min-width: $medium) { display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: 5rem; border: none; padding: 0; 
-            &:nth-child(odd){ flex-direction: row-reverse; }
-          } 
-          .project-text {
-            h3 { color: $highlight; }
-            .project-stack {
-              ul { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; align-items: center; gap: 1rem;
-                li {
-                  img { height: auto; width: 3rem; 
-                    @media (min-width: $medium) { width: 4rem; }
-                  }
-                }
-              }
-            }
-          }
-
-          .project-actions{
-
-            .project-imgs { 
-              margin: 2rem 0;
-              @media (min-width: $large) { width: 25rem; }
-            }
+body { font-family: 'Poppins', sans-serif; background-color: $white; color: $black; min-height: 100vh; overflow-x: hidden;
   
-            .project-links {
-              display: flex; flex-direction: row; justify-content: space-between; align-items: center; 
-              a{ display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: 1rem; text-decoration: none; padding: 0.25rem 0.5rem;
-                img { height: auto; width: 3rem;}
+  #hero { background-color: $black; color: $white; padding: 0 2rem; 
+    @media (min-width: $medium) { padding: 0 6rem 3rem; } 
+    @media (min-width: $xl) { padding: 0 15rem 3rem; } 
+    header {display: flex; flex-direction: row; justify-content: space-between; align-items: center;
+      @media (max-width: $mobile-nav) { display: block; }
+      @media (min-width: $medium) { padding: 1rem 0; }
+      h1 { font-size: 1.75rem; font-weight: 600; z-index: 1100; position: relative; background-color: $black; padding: 1rem 0;
+        @media (min-width: $medium) { font-size: 2rem; } 
+        @media (min-width: $large) { font-size: 2.25rem; } 
+        a { color: $highlight; }
+      }
+      .mobile-nav-toggle { display: none;
+        @media (max-width: $mobile-nav) { display: block; position: absolute; z-index: 9999; background: url("./svgs/bars-solid.svg"); width: 1.25rem; aspect-ratio: 1; top: 1.75rem; right: 2rem; background-repeat: no-repeat; border: 0;  
+          &[aria-expended=true] { background: url(./svgs/x-solid.svg); background-repeat: no-repeat; }
+        }
+      }
+      nav {
+        ul { display: flex; gap: 1rem; flex-direction: row; 
+          @media (max-width: $mobile-nav) { flex-direction: column;  position: absolute; background-color: $black; width: 80%; padding: 1rem 0; transform: translateY(-120%); transition: transform 350ms ease-in; z-index: 1000;
+            &[data-visible=true] { transform: translateY(0%); border-top: 4px solid $btn; }
+          }
+          @media (min-width: $large) { gap: 3rem; }
+          li { font-size: 1.25rem;
+            a { color: $white; 
+              @media (min-width: $medium) { font-size: 1.5rem; } }
+          }
+        }
+      }
+    }
+    main { display: block;
+      @media (min-width: $small) { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; }
+      .hero-img { padding-bottom: 1rem; 
+        img {
+          @media (min-width: $small) { height: auto; width: 35rem; }
+        }
+      }
+      .hero-text { 
+        h2 { text-transform: uppercase; padding: 0.5rem 0; z-index: 10; position: relative; }
+        p { font-weight: 200; max-width: 45ch; z-index: 10; position: relative;}
+      }
+      .hero-btns { display: flex; flex-direction: row; gap: 2rem; padding: 1rem 0 2rem;
+        a { 
+          img { 
+             @media (min-width: $large) { width: 2.5rem; height: auto;}
+          }
+        }
+      }
+    }
+  }
+
+  .slider { background: $gray; overflow:hidden; position: relative;
+    @media (min-width: $medium) { opacity: 0.4; position: absolute; height: 375px; top: 15%; left: 80%; background-color: $black; z-index: 0;width: 150px; }
+      @media (min-width: $large) { height: 450px;}
+      @media (min-width: $xl) { height: 550px;}
+    h2 { padding: 2rem 2rem 0;
+      @media (min-width: $medium) { color: $white; white-space: nowrap; position: relative; top: -10%; left: 45%; writing-mode: vertical-rl; text-orientation: upright; letter-spacing: -1px; }
+      @media (min-width: $large) { top: -7%;}
+    }
+    &::before, &::after { @include gray-gradient; content: ""; height: 120px; position: absolute; width: 70px; z-index: 2;
+      @media (min-width: $medium) { @include black-gradient; width: 120px; height: 100px; }
+    }
+    &::after { right: 0; top: 4rem; transform: rotateZ(180deg);
+      @media (min-width: $medium) { top: -5%; left: 10%; width: 80px; }
+    }
+    &::before { left: 0; top: 4rem;
+      @media (min-width: $medium) { top: auto; bottom: -5%; left: 12%; width: 85px; }
+    }
+    .slide-track { animation: scrollX $animationSpeed linear infinite; display: flex; width: calc(120px * 18); align-items: center;
+      @media (min-width: $medium) { width: 120px; height: calc(120px * 18); flex-direction: column; animation: scrollY $animationSpeed linear infinite; position: relative; bottom: 100%; }
+    }
+    .slide { height: 120px; width: 120px; display: flex; align-items: center; justify-content: center;
+    }
+  }
+
+  main { display: flex; flex-direction: column; justify-content: flex-start; align-items: start; gap: 2rem; 
+    h2 { padding-bottom: 1rem; }
+    h3 { color: $highlight; padding-bottom: 0.5rem; }
+    h4 { padding: 0.5rem 0; }
+    #about { padding: 2rem 2rem; width: 100%;
+      @media (min-width: $medium) { padding: 2rem 6rem; background-color: $gray; display: flex;  flex-direction: row;} 
+      @media (min-width: $xl) { padding: 2rem 15rem; } 
+      p { padding-bottom: 2rem;}
+      img { margin: 0 auto;}
+    }
+    #projects { padding: 0 2rem 2rem;
+      @media (min-width: $medium) { padding: 0 6rem 2rem; } 
+      @media (min-width: $xl) { padding: 0 15rem 2rem; } 
+      .project { padding-bottom: 6rem;
+        @media (min-width: $medium) { padding-bottom: 10rem; } 
+        @media (min-width: $large) { display: flex; flex-direction: row; justify-content: flex-start; align-items: stretch; gap: 5rem; 
+          &:nth-child(odd){ flex-direction: row-reverse; }
+        } 
+        &:last-child { padding-bottom: 0;}
+        .project-text {
+          .project-stack { padding: 1rem 0;
+            ul { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; gap: 1.5rem;
+              li {
+                img { 
+                  @media (min-width: $large) { width: 4rem; height: auto;}
+                }
               }
             }
           }
-          
         }
+        .project-actions {
+          .project-imgs {
+            img { width: 100%;
+              @media (min-width: $large) { width: 80rem; height: auto;}
+            }
+          }
+          .project-links { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; gap: 2rem; padding-top: 1rem;
+            a{ display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: 1rem; text-decoration: none; padding: 0.25rem 0.5rem; color: $black;
+              @media (min-width: $medium) { font-size: 1.25rem; } 
+              @media (min-width: $large) { font-size: 1.5rem; } 
+            }
+          }
+        }
+      }
+    }
 
+    #contact { background-color: $gray; padding: 2rem; width: 100%;
+      @media (min-width: $medium) { padding: 2rem 6rem; } 
+      @media (min-width: $medium) { display: grid; grid-template-columns: 1fr 1fr; }
+      @media (min-width: $xl) { padding: 2rem 15rem; } 
       
-        .see-more{ text-align: center; margin: 2rem 0 1rem 0;
-          a { text-decoration: none; color: $highlight; font-size: 1.25rem; 
-            &:hover { color: rgba($color: $highlight, $alpha: 0.6); }
-          }
-        }
-         
+      img { display: none;
+        @media (min-width: $medium) { display: block; justify-self: end; align-self: end; padding-top: 6rem; padding-left: 2rem;; }
       }
 
-      #contact { 
-        #contact-form { 
-          fieldset { border: none; margin: 1rem 0;
-            label {  @media (min-width: $medium) { font-size: 1.25rem; } }
-            input, textarea { width: 100%;  @media (min-width: $medium) { font-size: 1.25rem; } }
+      #contact-form { width: 100%;
+        fieldset { border: none; margin: 1rem 0;
+          label { 
+            @media (min-width: $medium) { font-size: 1.25rem; }  
+            @media (min-width: $large) { font-size: 1.5rem; } 
           }
-          button { border: none; width: 100%;}
+          input, textarea { width: 100%; display: block; 
+            @media (min-width: $medium) { font-size: 1.25rem; } 
+            @media (min-width: $large) { font-size: 1.5rem; } 
+          }
+        }
+        button { border: none; width: 100%; background-color: $btn; padding: 0.5rem 0; color: $black;
+          @media (min-width: $medium) { font-size: 1.25rem; } 
+          @media (min-width: $large) { font-size: 1.5rem; } 
         }
       }
     }
 
-    footer { background: $black; width: 100%; min-height: 5rem;
+  }
 
-    }
-}
-
-
-.btn { text-decoration: none; background-color: $btn; padding: 0.75rem; font-weight: 600; color: $black; display: block; width: fit-content;
-    &:hover { background-color: rgba($color: $btn, $alpha: 0.6); }
+  footer { background-color: $black; color: $gray; padding: 2rem; text-align: center;}
 }
 
-h2 { font-weight: 600; font-size: 1.5rem; margin-bottom: 0.75rem; margin-top: 2rem; 
-  @media (min-width: $medium) { font-size: 1.5rem; }
-  //@media (min-width: $large) { font-size: 2rem; }
-}
-h3 { font-weight: 600; font-size: 1.25rem; margin-bottom: 0.75rem; background-color: $black; padding: 0.5rem 1rem; width: fit-content;
-  @media (min-width: $medium) { font-size: 1.25rem; }
-  //@media (min-width: $large) { font-size: 1.75rem; }
-}
-h4 { font-weight: 600; font-size: 1rem; margin-bottom: 0.75rem; margin-top: 2rem; 
-  @media (min-width: $medium) { font-size: 1rem; }
-  //@media (min-width: $large) { font-size: 1.5rem; }
-}
-p { 
-  @media (min-width: $medium) { font-size: 1rem; } 
-  //@media (min-width: $large) { font-size: 1.5rem; } 
-}
-a { 
-  @media (min-width: $medium) { font-size: 1rem; } 
-  //@media (min-width: $large) { font-size: 1.5rem; } 
-}
-
+a { text-decoration: none; color: $black; }
 li { list-style: none; }
+img { max-width: 100%; height: auto;}
+h2 { font-size: 1.5rem; font-weight: 600; 
+  @media (min-width: $medium) { font-size: 1.75rem; } 
+  @media (min-width: $large) { font-size: 2rem; } 
+}
+h3 { font-size: 1.25rem; font-weight: 600;
+  @media (min-width: $medium) { font-size: 1.5rem; } 
+  @media (min-width: $large) { font-size: 1.75rem; } 
+}
+h4 { font-weight: 600;
+  @media (min-width: $medium) { font-size: 1.25rem; } 
+  @media (min-width: $large) { font-size: 1.5rem; } 
+}
+p { max-width: 75ch;
+  @media (min-width: $medium) { font-size: 1.25rem; } 
+  @media (min-width: $large) { font-size: 1.5rem; } 
+}
+textarea { resize: none; }
 
-#hero, .tech-stack, #about, #projects, #contact { margin-bottom: 7.5rem; }
+.anime-bar { text-decoration: none; color: $btn; position: relative;
+  &::after { content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 2px; background-color: currentColor; transform: scaleX(0); transform-origin: right; transition: transform 250ms ease-in; }
+  &:hover::after { transform: scaleX(1); transform-origin: left; }
+}
 
-img { width: 100%; height: auto;}
+.btn { cursor: pointer; border: 0; background: $btn; color: white; padding: 1em 1.5em; position: relative; z-index: 1;
+  &::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.3); z-index: -1; transition: transform 200ms ease-in; transform: scaleX(0); transform-origin: right;}
+  &:hover::after { transform: scaleX(1); transform-origin: left; }
+}
+
+.invert { 
+  @media (min-width: $medium) {filter: invert(1);}
+}
