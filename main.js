@@ -19,3 +19,20 @@ navLinks.forEach( link => link.addEventListener('click', () => {
     nav.setAttribute('data-visible', false)
     navToggle.setAttribute('aria-expended', false)
 }))
+
+
+const projects = document.querySelectorAll('.project')
+document.addEventListener('scroll', () => {
+    projects.forEach(project => {
+        const rect = project.getBoundingClientRect()
+
+        let viewPortBottom = window.innerHeight || document.documentElement.clientHeight
+
+        if(rect.bottom <= viewPortBottom*1.5 && !project.classList.contains('fade-animation')){
+            project.classList.add('fade-animation')
+        }
+    })
+        
+    
+})
+

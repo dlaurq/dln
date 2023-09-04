@@ -96,6 +96,14 @@ svg {
     transform: translateY(-1080px);
   }
 }
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 html {
   scroll-behavior: smooth;
 }
@@ -384,9 +392,6 @@ body main h3 {
   color: #F25757;
   padding-bottom: 0.5rem;
 }
-body main h4 {
-  padding: 0.5rem 0;
-}
 body main #about {
   padding: 2rem 2rem;
   width: 100%;
@@ -410,8 +415,13 @@ body main #about p {
 body main #about img {
   margin: 0 auto;
 }
-body main #projects {
+body main #projects h2 {
   padding: 0 2rem 2rem;
+}
+@media (min-width: 900px) {
+  body main #projects h2 {
+    padding: 0 0 1rem;
+  }
 }
 @media (min-width: 900px) {
   body main #projects {
@@ -421,82 +431,6 @@ body main #projects {
 @media (min-width: 1720px) {
   body main #projects {
     padding: 0 15rem 2rem;
-  }
-}
-body main #projects .project {
-  padding-bottom: 6rem;
-}
-@media (min-width: 900px) {
-  body main #projects .project {
-    padding-bottom: 10rem;
-  }
-}
-@media (min-width: 1200px) {
-  body main #projects .project {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: stretch;
-    gap: 5rem;
-  }
-  body main #projects .project:nth-child(odd) {
-    flex-direction: row-reverse;
-  }
-}
-body main #projects .project:last-child {
-  padding-bottom: 0;
-}
-body main #projects .project .project-text .project-stack {
-  padding: 1rem 0;
-}
-body main #projects .project .project-text .project-stack ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 1.5rem;
-}
-@media (min-width: 1200px) {
-  body main #projects .project .project-text .project-stack ul li img {
-    width: 4rem;
-    height: auto;
-  }
-}
-body main #projects .project .project-actions .project-imgs img {
-  width: 100%;
-}
-@media (min-width: 1200px) {
-  body main #projects .project .project-actions .project-imgs img {
-    width: 80rem;
-    height: auto;
-  }
-}
-body main #projects .project .project-actions .project-links {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 2rem;
-  padding-top: 1rem;
-}
-body main #projects .project .project-actions .project-links a {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  text-decoration: none;
-  padding: 0.25rem 0.5rem;
-  color: #171717;
-}
-@media (min-width: 900px) {
-  body main #projects .project .project-actions .project-links a {
-    font-size: 1.25rem;
-  }
-}
-@media (min-width: 1200px) {
-  body main #projects .project .project-actions .project-links a {
-    font-size: 1.5rem;
   }
 }
 body main #contact {
@@ -713,7 +647,95 @@ textarea {
 }
 
 @media (min-width: 900px) {
-  .invert {
+  .invert-medium {
     filter: invert(1);
+  }
+}
+
+.invert {
+  filter: invert(1);
+}
+
+.fade-animation {
+  animation: fade 0.3s ease-in forwards;
+}
+
+.project2 {
+  padding: 2rem;
+  background-color: #171717;
+}
+.project2 .project-content {
+  position: relative;
+}
+.project2 .project-content .project-img img {
+  width: auto;
+  height: 100%;
+}
+.project2 .project-content .project-info {
+  background-color: #171717;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: start;
+}
+@media (min-width: 900px) {
+  .project2 .project-content .project-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+}
+.project2 .project-content .project-info p {
+  color: #F4F4F4;
+  max-width: 45ch;
+  margin: 1rem 0;
+}
+.project2 .project-content .project-info .project-stack h4 {
+  color: #F4F4F4;
+}
+.project2 .project-content .project-info .project-stack ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  margin: 0.5rem 0 1rem;
+}
+@media (min-width: 650px) {
+  .project2 .project-content .project-info .project-stack ul {
+    gap: 2rem;
+  }
+}
+.project2 .project-content .project-info .project-stack ul li img {
+  height: auto;
+  width: 4rem;
+}
+.project2 .project-content .project-info .project-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+@media (min-width: 650px) {
+  .project2 .project-content .project-info .project-links {
+    gap: 2rem;
+  }
+}
+.project2 .project-content .project-info .project-links a {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #E9DF00;
+  padding: 0.25rem 0.75rem;
+  font-weight: 600;
+}
+@media (min-width: 650px) {
+  .project2 .project-content .project-info .project-links a {
+    gap: 1rem;
   }
 }/*# sourceMappingURL=style.css.map */

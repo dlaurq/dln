@@ -98,6 +98,11 @@ svg {
   100% { transform: translateY(calc(-120px * 9))}
 }
 
+@keyframes fade {
+  0% { opacity: 0; }
+  100% { opacity: 1;}
+}
+
 $white: #F4F4F4;
 $gray: #e0e0e0;
 $black: #171717;
@@ -149,7 +154,7 @@ body { font-family: 'Poppins', sans-serif; background-color: $white; color: $bla
     main { display: block;
       @media (min-width: $small) { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; }
       .hero-img { padding-bottom: 1rem; 
-        img {
+        img { 
           @media (min-width: $small) { height: auto; width: 35rem; }
         }
       }
@@ -194,47 +199,20 @@ body { font-family: 'Poppins', sans-serif; background-color: $white; color: $bla
   main { display: flex; flex-direction: column; justify-content: flex-start; align-items: start; gap: 2rem; 
     h2 { padding-bottom: 1rem; }
     h3 { color: $highlight; padding-bottom: 0.5rem; }
-    h4 { padding: 0.5rem 0; }
+
     #about { padding: 2rem 2rem; width: 100%;
       @media (min-width: $medium) { padding: 2rem 6rem; background-color: $gray; display: flex;  flex-direction: row;} 
       @media (min-width: $xl) { padding: 2rem 15rem; } 
       p { padding-bottom: 2rem;}
       img { margin: 0 auto;}
     }
-    #projects { padding: 0 2rem 2rem;
+    #projects { //padding: 0 2rem 2rem;
+      h2 { padding: 0 2rem 2rem;
+        @media (min-width: $medium) { padding: 0 0 1rem; } 
+      }
       @media (min-width: $medium) { padding: 0 6rem 2rem; } 
       @media (min-width: $xl) { padding: 0 15rem 2rem; } 
-      .project { padding-bottom: 6rem;
-        @media (min-width: $medium) { padding-bottom: 10rem; } 
-        @media (min-width: $large) { display: flex; flex-direction: row; justify-content: flex-start; align-items: stretch; gap: 5rem; 
-          &:nth-child(odd){ flex-direction: row-reverse; }
-        } 
-        &:last-child { padding-bottom: 0;}
-        .project-text {
-          .project-stack { padding: 1rem 0;
-            ul { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; gap: 1.5rem;
-              li {
-                img { 
-                  @media (min-width: $large) { width: 4rem; height: auto;}
-                }
-              }
-            }
-          }
-        }
-        .project-actions {
-          .project-imgs {
-            img { width: 100%;
-              @media (min-width: $large) { width: 80rem; height: auto;}
-            }
-          }
-          .project-links { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; gap: 2rem; padding-top: 1rem;
-            a{ display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: 1rem; text-decoration: none; padding: 0.25rem 0.5rem; color: $black;
-              @media (min-width: $medium) { font-size: 1.25rem; } 
-              @media (min-width: $large) { font-size: 1.5rem; } 
-            }
-          }
-        }
-      }
+      
     }
 
     #contact { background-color: $gray; padding: 2rem; width: 100%;
@@ -300,6 +278,39 @@ textarea { resize: none; }
   &:hover::after { transform: scaleX(1); transform-origin: left; }
 }
 
-.invert { 
+.invert-medium { 
   @media (min-width: $medium) {filter: invert(1);}
+}
+.invert { filter: invert(1); }
+
+
+.fade-animation { animation: fade 0.3s ease-in forwards; }
+
+
+.project2 { padding: 2rem; background-color: $black;
+  h3 {}
+  .project-content { position: relative;
+    .project-img {
+      img {width: auto; height: 100%;}
+    }
+    .project-info{ background-color: $black; display: flex; flex-direction: column; justify-content: space-evenly; align-items: start; 
+      @media (min-width: $medium) {position: absolute; top: 0; left: 0; height: 100%; width: 100%; }
+      p { color: $white; max-width: 45ch; margin: 1rem 0;}
+      .project-stack { 
+        h4 { color: $white;}
+        ul { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; gap: 1rem; margin: 0.5rem 0 1rem;
+          @media (min-width:$small) { gap: 2rem;}
+          li {
+            img { height: auto; width: 4rem; }
+          }
+        }
+      }
+      .project-links { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; gap: 1rem;
+        @media (min-width:$small) { gap: 2rem; }
+        a { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; gap: 0.5rem;  background-color: $btn; padding: 0.25rem 0.75rem; font-weight: 600;
+          @media (min-width:$small) { gap: 1rem;}
+        }
+      }
+    }
+  }
 }
