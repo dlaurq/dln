@@ -28,11 +28,9 @@ document.addEventListener('scroll', () => {
 
         let viewPortBottom = window.innerHeight || document.documentElement.clientHeight
 
-        if(rect.bottom <= viewPortBottom*1.5 && !project.classList.contains('fade-animation')){
+        if(rect.bottom <= viewPortBottom*1.15 && !project.classList.contains('fade-animation')){
             project.classList.add('fade-animation')
         }
     })
-        
-    
 })
 
